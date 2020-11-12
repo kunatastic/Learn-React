@@ -2,6 +2,8 @@ import React from "react";
 import ReactDom from "react-dom";
 import "./style.css";
 
+//iterating the object results a error but a string is fine
+
 const books = [
   {
     title: "Origin",

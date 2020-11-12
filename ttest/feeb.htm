@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <table border="1px">
+            <form>
+                <tr>
+                    <th></th>
+                    <th>Very Satsisfied</th>
+                    <th>Satsisfied</th>
+                    <th>Somewhat Satsisfied</th>
+                    <th>Not Satsisfied</th>
+                </tr>
+                <tr>
+                    <th>Service Quality</th>
+                    <td><input type="radio" name="sq" value="3" class="sq"></td>
+                    <td><input type="radio" name="sq" value="2" class="sq"></td>
+                    <td><input type="radio" name="sq" value="1" class="sq"></td>
+                    <td><input type="radio" name="sq" value="0" class="sq"></td>
+                </tr>
+                <tr>
+                    <th>Overall Hygiene</th>
+                    <td><input type="radio" name="oh" value="3" class="oh"></td>
+                    <td><input type="radio" name="oh" value="2" class="oh"></td>
+                    <td><input type="radio" name="oh" value="1" class="oh"></td>
+                    <td><input type="radio" name="oh" value="0" class="oh"></td>
+                </tr>
+                <tr>
+                    <th>Responsiveness</th>
+                    <td><input type="radio" name="r" value="3" class="r"></td>
+                    <td><input type="radio" name="r" value="2" class="r"></td>
+                    <td><input type="radio" name="r" value="1" class="r"></td>
+                    <td><input type="radio" name="r" value="0" class="r"></td>
+                </tr>
+                <tr>
+                    <th>Kindness and Helpfulness</th>
+                    <td><input type="radio" name="kh" value="3" class="kh"></td>
+                    <td><input type="radio" name="kh" value="2" class="kh"></td>
+                    <td><input type="radio" name="kh" value="1" class="kh"></td>
+                    <td><input type="radio" name="kh" value="0" class="kh"></td>
+                </tr>
+                <tr>
+                    <input type="button" value="submit" id="submit" name="submit">
+                </tr>
+            </form>
+        </table>
+    </div>
+</body>
+
+</html>
+<script>
+    const btn = document.querySelector('#submit');
+
+    btn.onclick = function () {
+        var num = 0;
+        const sq = document.querySelectorAll('input[name="sq"]');
+        for (const sqr of sq) {
+            if (sqr.checked) {
+                num += sqr.value;
+                break;
+            }
+        }
+        const oh = document.querySelectorAll('input[name="oh"]');
+        for (const ohr of oh) {
+            if (ohr.checked) {
+                num += ohr.value;
+                break;
+            }
+        }
+        const r = document.querySelectorAll('input[name="r"]');
+        for (const rr of r) {
+            if (rr.checked) {
+                num += rr.value;
+                break;
+            }
+        }
+        const kh = document.querySelectorAll('input[name="kh"]');
+        for (const khr of kh) {
+            if (khr.checked) {
+                num += khr.value;
+                break;
+            }
+        }
+
+        var avg = num / 4;
+        if (avg >= 2) {
+            alert("Selected");
+        }
+        else {
+            alert("Not Selected");
+        }
+    }
+</script>
+
+
+
+This diagram contains 3 main charcters they are Client, Waiter and Cashier. Each of them have their unqieu tasks 
+1) Client can :
+    Give order food
+    Pay Bill
+    Take reciept
+2) Waiter can:
+    Recieve order
+    Cancel Food
+    Schedule time of delivery
+3) Cashier can:
+    Generate the Bill
+    Print the Bill
